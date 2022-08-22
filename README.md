@@ -7,6 +7,6 @@ In the main folder are the 3 Python scripts needed for performing image rectific
 3. coastcam_funcs.py - contains various functions needed for rectification
 
 There are also folders for performing rectification with different wrapper code:
-/exif_rectify - rectify imagery using parameters stored in an image's EXIF metadata.
-/yaml_rectify - rectify imagery using parameters stored in YAML files
-/s3_rectify - rectify imagery from S3. YAML files will also be needed.
+1. /exif_rectify - rectify imagery using parameters stored in an image's EXIF metadata.
+2. /yaml_rectify - rectify imagery using parameters stored in YAML files
+3. /s3_rectify - rectify imagery from S3. YAML files will also be needed.
