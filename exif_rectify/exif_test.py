@@ -44,17 +44,17 @@ def readYAMLcomments(yamlfile):
 
 
 ##### MAIN #####
-img = pyexiv2.Image('1581508801.c2.timex.jpg')
+img = pyexiv2.Image('1667912400.Tue.Nov.08_13_00_00.GMT.2022.madbeach.c1.ras.tiff')
 
 #top level dict for exif UserComment tag
 UserComment= {}
 UserComment['Note'] = ('This comment provides 2 nested dictionaries: one for calibration data fields, one for descriptions of those fields')
 
 #calibration paramters
-extrinsics = yaml2dict('CACO-01_C2_extr.yaml')
-intrinsics = yaml2dict('CACO-01_C2_intr.yaml')
-metadata = yaml2dict('CACO-01_C2_metadata.yaml')
-local_origin = yaml2dict('CACO-01_localOrigin.yaml')
+extrinsics = yaml2dict('madeira_beach_C1_extr.yaml')
+intrinsics = yaml2dict('madeira_beach_C1_intr.yaml')
+metadata = yaml2dict('madeira_beach_C1_metadata.yaml')
+local_origin = yaml2dict('madeira_beach_localOrigin.yaml')
 #rename x and y in local_origin so x and y for extrinsics don't get overwritten
 local_origin['x_origin'] = local_origin.pop('x')
 local_origin['y_origin'] = local_origin.pop('y')
@@ -73,10 +73,10 @@ for dictionary in yaml_list:
 #Read comments from YAML file into one dictionary
 comment_fields = {}
 comment_list = []
-extr_comments = readYAMLcomments('CACO-01_C2_extr.yaml')
-intr_comments = readYAMLcomments('CACO-01_C2_intr.yaml')
-metadata_comments = readYAMLcomments('CACO-01_C2_metadata.yaml')
-localOrg_comments = readYAMLcomments('CACO-01_localOrigin.yaml')
+extr_comments = readYAMLcomments('madeira_beach_C1_extr.yaml')
+intr_comments = readYAMLcomments('madeira_beach_C1_intr.yaml')
+metadata_comments = readYAMLcomments('madeira_beach_C1_metadata.yaml')
+localOrg_comments = readYAMLcomments('madeira_beach_localOrigin.yaml')
 comment_list.append(extr_comments)
 comment_list.append(intr_comments)
 comment_list.append(metadata_comments)
